@@ -1,0 +1,116 @@
+/* Container */
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+  width: 100%;
+}
+
+/* Section baseline */
+section {
+  padding-block: var(--space-section);
+  position: relative;
+}
+
+/* Hero — full viewport, centered content */
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: var(--space-xl);
+  padding-inline: var(--container-pad);
+  max-width: var(--container-max);
+  margin-inline: auto;
+}
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  font-size: var(--fs-small);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-md);
+}
+
+.hero-meta::before {
+  content: '';
+  width: 2rem;
+  height: 1px;
+  background: var(--muted);
+  display: inline-block;
+}
+
+.hero-title {
+  font-size: var(--fs-display);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+  margin-bottom: var(--space-md);
+  color: var(--fg);
+}
+
+.hero-tagline {
+  font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+  color: var(--muted);
+  max-width: 32ch;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+}
+
+/* About — two-column on desktop */
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .about-inner {
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-xl);
+  }
+}
+
+.about-content p {
+  font-size: clamp(1.125rem, 1.4vw, 1.25rem);
+  line-height: 1.55;
+  color: var(--fg);
+  max-width: 50ch;
+}
+
+.about-content p + p {
+  margin-top: 1.2em;
+  color: var(--muted);
+}
+
+/* Work — projects grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 720px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg) var(--space-md);
+  }
+}
+
+/* Contact — generous padding */
+.contact-inner {
+  max-width: 900px;
+}
+
+/* Footer */
+.site-footer {
+  padding-block: var(--space-lg) var(--space-md);
+  border-top: 1px solid var(--border);
+  font-size: var(--fs-small);
+  color: var(--muted);
+}

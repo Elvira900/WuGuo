@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yimi Ni — Learning in public</title>
+  <meta name="description" content="Yimi Ni — student in Chongqing. Learning in public, building things I'm proud of.">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Yimi Ni">
+  <meta property="og:description" content="Learning in public. Building things I'm proud of.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon (inline SVG, no extra file) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0a0a'/%3E%3Ctext x='50' y='68' font-family='system-ui,sans-serif' font-size='52' font-weight='600' fill='%23f5f5f4' text-anchor='middle'%3EYN%3C/text%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Inter Variable -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet cascade: reset → variables → base → layout → components -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="#top" class="logo" aria-label="Home">YN</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ============== Hero ============== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="hero-meta">
+        <span>Chongqing, China · 2026</span>
+      </p>
+      <h1 id="hero-title" class="hero-title">
+        <span data-text-effect>Yimi Ni</span>
+      </h1>
+      <p class="hero-tagline">Learning in public. Building things I'm proud of.</p>
+    </section>
+
+    <!-- ============== About ============== -->
+    <section id="about" class="container" aria-labelledby="about-label">
+      <div class="about-inner" data-reveal>
+        <h2 id="about-label" class="section-label">About</h2>
+        <div class="about-content">
+          <p>I'm a student based in Chongqing, interested in the parts of software that are small enough to hold in your head but big enough to teach you something new.</p>
+          <p>TODO: replace this paragraph with a few more sentences — what you've been building lately, what you're curious about, and what you want to try next. Two or three sentences is enough.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== Selected Work ============== -->
+    <section id="work" class="container" aria-labelledby="work-label">
+      <h2 id="work-label" class="section-label" data-reveal>Selected Work</h2>
+      <div id="projects-grid" class="projects-grid">
+        <!-- Project cards are rendered by js/projects.js -->
+      </div>
+    </section>
+
+    <!-- ============== Contact ============== -->
+    <section id="contact" class="container" aria-labelledby="contact-label">
+      <div class="contact-inner" data-reveal>
+        <h2 id="contact-label" class="section-label">Get in touch</h2>
+        <a href="mailto:Ni_Yimi@outlook.com" class="email-link" data-text-effect>Ni_Yimi@outlook.com</a>
+        <div class="socials">
+          <a href="https://github.com/Yimi339" target="_blank" rel="noopener noreferrer">GitHub →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Yimi Ni. Designed and built by hand.</p>
+    </div>
+  </footer>
+
+  <!-- ============== Vendor libraries (CDN) ============== -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+
+  <!-- ============== App scripts ============== -->
+  <script src="js/smooth-scroll.js" defer></script>
+  <script src="js/text-effect.js" defer></script>
+  <script src="js/reveal.js" defer></script>
+  <script src="js/projects.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

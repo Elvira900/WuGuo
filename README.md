@@ -1,4 +1,4 @@
-# Yimi Ni — Personal Portfolio
+# Wuguo — Personal Portfolio
 
 A light, editorial-style portfolio built for college admissions readers.
 Designed to feel calm, considered, and worth a second read.

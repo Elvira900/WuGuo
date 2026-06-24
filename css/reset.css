@@ -20,12 +20,12 @@ html {
 body {
   min-height: 100vh;
   line-height: 1.5;
-  font-family: var(--font-sans);
 }
 
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 input, button, textarea, select {
@@ -37,11 +37,6 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 ul, ol {
   list-style: none;
 }
@@ -50,9 +45,4 @@ button {
   background: none;
   border: none;
   cursor: pointer;
-}
-
-::selection {
-  background: var(--accent);
-  color: var(--bg);
 }

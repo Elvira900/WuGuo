@@ -1,15 +1,10 @@
 /**
- * Entry point. Order matters:
- *   1. Render projects (so reveal targets exist in the DOM).
- *   2. Smooth scroll (Lenis, needs to be in place before ScrollTrigger.batch).
- *   3. ScrollTrigger-based reveals.
- *   4. Hero / contact text reveal (independent of scroll).
+ * Entry point. Order matters: reveals first (so [data-reveal] targets
+ * are observed before paint), then scroll-driven header state.
  */
 function init() {
-  renderProjects();
-  initSmoothScroll();
   initReveals();
-  initTextEffect();
+  initSmoothScroll();
 }
 
 if (document.readyState === 'loading') {

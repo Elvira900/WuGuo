@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yimi Ni — Learning in public</title>
-  <meta name="description" content="Yimi Ni — student in Chongqing. Learning in public, building things I'm proud of.">
-  <meta name="theme-color" content="#0a0a0a">
+  <title>Yimi Ni — Selected Coursework</title>
+  <meta name="description" content="Yimi Ni — student in Chongqing. Coursework, academic interests, and what I'm learning.">
+  <meta name="theme-color" content="#F5F1E8">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Yimi Ni">
-  <meta property="og:description" content="Learning in public. Building things I'm proud of.">
+  <meta property="og:description" content="Coursework, academic interests, and what I'm learning.">
   <meta property="og:type" content="website">
 
-  <!-- Favicon (inline SVG, no extra file) -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0a0a'/%3E%3Ctext x='50' y='68' font-family='system-ui,sans-serif' font-size='52' font-weight='600' fill='%23f5f5f4' text-anchor='middle'%3EYN%3C/text%3E%3C/svg%3E">
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23F5F1E8'/%3E%3Ctext x='50' y='70' font-family='Georgia,serif' font-size='54' font-weight='500' fill='%231A1A1A' text-anchor='middle'%3E%3Ci%3EY%3C/i%3E%3C/text%3E%3C/svg%3E">
 
-  <!-- Google Fonts: Inter Variable -->
+  <!-- Google Fonts: Fraunces (serif) + Inter (sans) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@300..700&display=swap" rel="stylesheet">
 
   <!-- Stylesheet cascade: reset → variables → base → layout → components -->
   <link rel="stylesheet" href="css/reset.css">
@@ -29,10 +29,10 @@
 </head>
 <body>
   <header class="site-header">
-    <a href="#top" class="logo" aria-label="Home">YN</a>
+    <a href="#top" class="logo" aria-label="Home"><em>Y</em>N</a>
     <nav class="site-nav" aria-label="Primary">
       <a href="#about">About</a>
-      <a href="#work">Work</a>
+      <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -40,62 +40,123 @@
   <main id="top">
     <!-- ============== Hero ============== -->
     <section class="hero" aria-labelledby="hero-title">
-      <p class="hero-meta">
-        <span>Chongqing, China · 2026</span>
+      <p class="hero-meta dateline" data-reveal>
+        Chongqing, China · Volume I · 2026
       </p>
-      <h1 id="hero-title" class="hero-title">
-        <span data-text-effect>Yimi Ni</span>
+      <h1 id="hero-title" class="hero-title" data-reveal>
+        <em>Yimi</em> Ni
       </h1>
-      <p class="hero-tagline">Learning in public. Building things I'm proud of.</p>
+      <p class="hero-tagline" data-reveal>
+        A student's record of what she's reading, building, and trying to understand.
+      </p>
     </section>
 
     <!-- ============== About ============== -->
     <section id="about" class="container" aria-labelledby="about-label">
-      <div class="about-inner" data-reveal>
-        <h2 id="about-label" class="section-label">About</h2>
-        <div class="about-content">
-          <p>I'm a student based in Chongqing, interested in the parts of software that are small enough to hold in your head but big enough to teach you something new.</p>
-          <p>TODO: replace this paragraph with a few more sentences — what you've been building lately, what you're curious about, and what you want to try next. Two or three sentences is enough.</p>
-        </div>
+      <div data-reveal>
+        <h2 id="about-label" class="section-label">
+          <span class="section-num">I.</span> About
+        </h2>
+      </div>
+      <div class="about-content" data-reveal>
+        <p class="drop-cap">
+          I'm a student based in Chongqing, drawn to the parts of software that are small enough to keep in your head but large enough to teach you something new. Most of what I know, I learned by making things I cared about.
+        </p>
+        <p>
+          TODO: replace with a few more sentences — what you've been working on lately, what questions are on your mind, what you want to try next. Two or three sentences is plenty.
+        </p>
+        <p class="pull-quote">
+          I think of this site as a small, honest notebook — more about the questions than the answers.
+        </p>
       </div>
     </section>
 
-    <!-- ============== Selected Work ============== -->
-    <section id="work" class="container" aria-labelledby="work-label">
-      <h2 id="work-label" class="section-label" data-reveal>Selected Work</h2>
-      <div id="projects-grid" class="projects-grid">
-        <!-- Project cards are rendered by js/projects.js -->
+    <!-- ============== Education (feature) ============== -->
+    <section id="education" class="container container--wide" aria-labelledby="education-label">
+      <div data-reveal>
+        <h2 id="education-label" class="section-label">
+          <span class="section-num">II.</span> Education
+        </h2>
       </div>
+
+      <article class="education-feature" data-reveal>
+        <header class="education-feature__head">
+          <h3 class="school-name">[School Name]</h3>
+          <p class="school-meta dateline">
+            <span>City, Country</span>
+            <span class="sep">·</span>
+            <span>2023 — 2026 (expected)</span>
+          </p>
+          <p class="school-summary">
+            TODO: short paragraph about the school and what you've found there — the shape of the program, the kind of people you've met, what you've been pushed to think about.
+          </p>
+        </header>
+
+        <div class="education-feature__body">
+          <p class="dateline" style="margin-bottom: var(--space-6);">Selected Coursework</p>
+          <div class="course-grid">
+            <div class="course">
+              <h4>Course Title 01</h4>
+              <p>One sentence on what it covered and what you took from it.</p>
+            </div>
+            <div class="course">
+              <h4>Course Title 02</h4>
+              <p>One sentence on what it covered and what you took from it.</p>
+            </div>
+            <div class="course">
+              <h4>Course Title 03</h4>
+              <p>One sentence on what it covered and what you took from it.</p>
+            </div>
+            <div class="course">
+              <h4>Course Title 04</h4>
+              <p>One sentence on what it covered and what you took from it.</p>
+            </div>
+            <div class="course">
+              <h4>Course Title 05</h4>
+              <p>One sentence on what it covered and what you took from it.</p>
+            </div>
+            <div class="course">
+              <h4>Course Title 06</h4>
+              <p>One sentence on what it covered and what you took from it.</p>
+            </div>
+          </div>
+
+          <div class="interests">
+            <span class="dateline">Academic Interests</span>
+            <span class="interest-tag">Interest 01</span>
+            <span class="interest-tag">Interest 02</span>
+            <span class="interest-tag">Interest 03</span>
+            <span class="interest-tag">Interest 04</span>
+          </div>
+        </div>
+      </article>
     </section>
 
     <!-- ============== Contact ============== -->
     <section id="contact" class="container" aria-labelledby="contact-label">
       <div class="contact-inner" data-reveal>
-        <h2 id="contact-label" class="section-label">Get in touch</h2>
-        <a href="mailto:Ni_Yimi@outlook.com" class="email-link" data-text-effect>Ni_Yimi@outlook.com</a>
+        <h2 id="contact-label" class="section-label" style="justify-content: center;">
+          <span class="section-num">III.</span> Get in touch
+        </h2>
+        <a href="mailto:Ni_Yimi@outlook.com" class="email-link">Ni_Yimi@outlook.com</a>
         <div class="socials">
           <a href="https://github.com/Yimi339" target="_blank" rel="noopener noreferrer">GitHub →</a>
+          <a href="https://github.com/Yimi339/yimi-ni-portfolio" target="_blank" rel="noopener noreferrer">Source →</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 Yimi Ni. Designed and built by hand.</p>
+    <div class="container footer-row">
+      <p>© 2026 Yimi Ni</p>
+      <p>Set in Fraunces &amp; Inter. Hand-built in Chongqing.</p>
     </div>
   </footer>
 
-  <!-- ============== Vendor libraries (CDN) ============== -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
-
-  <!-- ============== App scripts ============== -->
-  <script src="js/smooth-scroll.js" defer></script>
-  <script src="js/text-effect.js" defer></script>
+  <!-- App scripts -->
   <script src="js/reveal.js" defer></script>
-  <script src="js/projects.js" defer></script>
+  <script src="js/scroll.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>

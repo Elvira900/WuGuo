@@ -1,52 +1,45 @@
 # Yimi Ni — Personal Portfolio
 
-A minimal, editorial-style personal portfolio. Built to accompany my college application materials — designed to feel calm, honest, and considered.
+A light, editorial-style portfolio built for college admissions readers.
+Designed to feel calm, considered, and worth a second read.
 
 ## Stack
 
-- **HTML / CSS / JavaScript** — no build step
-- **GSAP 3.12** + **ScrollTrigger** — scroll-driven animations
-- **Lenis 1.1** — smooth scroll
-- **Inter Variable** — typography (Google Fonts)
-- All dependencies loaded via CDN
+- **HTML / CSS / JavaScript** — no build step, no framework
+- **Fraunces** (variable serif) + **Inter** (variable sans) — Google Fonts
+- **IntersectionObserver** — scroll-driven reveals (no GSAP / no Lenis)
+- All dependencies loaded via CDN (fonts only)
+
+## Design direction
+
+A magazine-style paper aesthetic:
+
+- Warm cream background (`#F5F1E8`), deep ink (`#1A1A1A`), one terracotta accent (`#B8512F`)
+- Serif headlines, sans body, asymmetric editorial grids, drop caps, pull quotes
+- Generous whitespace, subtle scroll reveals, no flashy motion
+- Designed for college admissions officers — clear academic profile, fast to scan
 
 ## Local preview
 
-The site is fully static. To preview locally:
+The site is fully static. From this directory:
 
 ```bash
-cd portfolio
 python -m http.server 8000
 # then open http://localhost:8000
 ```
 
-Or just double-click `index.html` (CDN scripts require an internet connection).
+Or just double-click `index.html` (Google Fonts requires an internet connection).
 
 ## Editing content
 
-Most of the content lives in **two places**:
+Most content lives in **`index.html`**. Search for `TODO` comments to find placeholders:
 
-### 1. `index.html`
-- Your name, tagline, location, about text, email, and social links.
-- Search for `TODO` comments to find placeholder sections.
+- **Hero** — name, tagline, dateline (`Chongqing, China · Volume I · 2026`)
+- **About** — 2–3 paragraph self-introduction
+- **Education** — school name, dates, summary, selected coursework (6 cards), academic interests (tags)
+- **Contact** — email + GitHub links
 
-### 2. `js/projects.js`
-- Each project is an object in the `projects` array:
-  ```js
-  {
-    title: 'Project name',
-    year: '2025',
-    role: 'Designer & Developer',
-    description: 'One sentence — what it is and why it matters.',
-    tech: ['React', 'Node'],
-    link: 'https://github.com/Yimi339/project',
-    image: 'assets/images/projects/cover.jpg', // or null for placeholder
-  }
-  ```
-- Add or remove objects from the array. The grid renders automatically.
-
-### Adding project images
-Drop files into `assets/images/projects/` and reference them as `image: 'assets/images/projects/yourfile.jpg'`. Leave `image: null` for a clean gray placeholder.
+To swap colors / typography / spacing: edit `css/variables.css`.
 
 ## Project structure
 
@@ -58,26 +51,23 @@ portfolio/
 ├── .gitignore
 ├── css/
 │   ├── reset.css
-│   ├── variables.css
-│   ├── base.css
-│   ├── layout.css
-│   └── components.css
+│   ├── variables.css       # colors / type / spacing tokens
+│   ├── base.css            # typography + editorial primitives
+│   ├── layout.css          # containers + grids
+│   └── components.css      # header / hero / cards / contact / footer
 ├── js/
-│   ├── main.js
-│   ├── smooth-scroll.js
-│   ├── text-effect.js
-│   ├── reveal.js
-│   └── projects.js
+│   ├── reveal.js           # IntersectionObserver fade-ups
+│   ├── scroll.js           # header shadow + native smooth scroll
+│   └── main.js             # entry point
 └── assets/
-    ├── images/projects/
-    └── svg/
+    └── README.md           # placeholder for future images
 ```
 
 ## Deployment
 
 The site is plain static HTML — drop the `portfolio/` folder onto any static host:
 
-- **GitHub Pages** — push to a repo, enable Pages in settings
+- **GitHub Pages** — push to a repo, enable Pages in repo settings
 - **Netlify / Vercel** — drag-and-drop the folder
 - **Cloudflare Pages** — connect repo, build command empty, output dir `.`
 

@@ -1,53 +1,39 @@
 /**
- * Scroll-driven reveal animations.
+ * Scroll-driven reveal animations using IntersectionObserver.
  *
- * - [data-reveal] elements fade up as they enter the viewport.
- * - #projects-grid .project-card is handled as a batch (staggered) reveal.
- *
- * Initial state is set immediately so cards never flash visible-then-hidden.
+ * - `[data-reveal]` elements fade up as they enter the viewport.
+ * - Initial hidden state is gated on `.js-loaded` (added in init),
+ *   so the page is fully visible without JS — no FOUC for noscript users.
+ * - Respects `prefers-reduced-motion`.
  */
 function initReveals() {
-  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+  // Tell CSS that JS is ready. Until this class is on <body>,
+  // [data-reveal] elements are visible (default).
+  document.body.classList.add('js-loaded');
 
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const targets = document.querySelectorAll('[data-reveal]');
+  if (!targets.length) return;
 
-  // Generic section reveals
-  gsap.utils.toArray('[data-reveal]').forEach(el => {
-    gsap.fromTo(
-      el,
-      { y: 40, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.9,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 85%',
-          toggleActions: 'play none none none',
-        },
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const supported = 'IntersectionObserver' in window;
+
+  // Reduced motion OR no IO support → just show everything.
+  if (reduceMotion || !supported) {
+    targets.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
       }
-    );
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -40px 0px',
   });
 
-  // Project cards — batched stagger.
-  // Set initial state first so the cards don't flash.
-  const cards = gsap.utils.toArray('#projects-grid .project-card');
-  if (cards.length) {
-    gsap.set(cards, { y: 50, opacity: 0 });
-
-    ScrollTrigger.batch(cards, {
-      start: 'top 90%',
-      onEnter: batch => {
-        gsap.to(batch, {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: 'power3.out',
-          stagger: 0.08,
-          overwrite: true,
-        });
-      },
-    });
-  }
+  targets.forEach(el => observer.observe(el));
 }
